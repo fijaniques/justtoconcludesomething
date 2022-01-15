@@ -10,8 +10,10 @@ enum {
 }
 
 var speed = 300
+var getMidX : float
 
 func _ready():
+	position.x += getMidX
 	_set_color()
 	match color:
 		RED:
@@ -31,3 +33,6 @@ func _set_color():
 		color = GREEN
 	else:
 		color = BLUE
+
+func _on_Enemy_body_entered(body):
+	queue_free()
