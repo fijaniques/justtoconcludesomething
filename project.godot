@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="JustToConcludeSomething"
-run/main_scene="res://Scenes/Game/Game.tscn"
+run/main_scene="res://Scenes/Game/GameWindow.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -27,6 +27,9 @@ window/stretch/aspect="keep_width"
 2d_physics/layer_1="Bullets"
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="UI"
+2d_physics/layer_4="RED"
+2d_physics/layer_5="GREEN"
+2d_physics/layer_6="BLUE"
 
 [physics]
 

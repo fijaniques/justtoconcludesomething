@@ -29,10 +29,14 @@ func _physics_process(delta):
 func _set_color():
 	if(spawnColor == 1):
 		color = RED
+		$HurtBox.set_collision_layer_bit(3, true)
 	elif(spawnColor == 2):
 		color = GREEN
+		$HurtBox.set_collision_layer_bit(4, true)
 	else:
 		color = BLUE
+		$HurtBox.set_collision_layer_bit(5, true)
 
-func _on_Enemy_body_entered(body):
-	queue_free()
+func _on_HurtBox_area_entered(area):
+	if(area.name == "HitBox"):
+		queue_free()
