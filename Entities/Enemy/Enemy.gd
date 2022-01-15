@@ -9,7 +9,7 @@ enum {
 	BLUE
 }
 
-var speed
+var speed = 300
 
 func _ready():
 	_set_color()
@@ -20,6 +20,9 @@ func _ready():
 			modulate = Color(0, 1, 0)
 		BLUE:
 			modulate = Color(0, 0, 1)
+
+func _physics_process(delta):
+	position.y += speed * delta
 
 func _set_color():
 	if(spawnColor == 1):
