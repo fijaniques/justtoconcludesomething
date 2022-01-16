@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Entities/Buttons/ChangeColor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Gun/Gun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Game/GameWindow.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/MochiyPopPOne-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 200
+font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1218, 291 )
@@ -20,6 +25,18 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.0666667, 0.466667, 0.529412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+margin_left = 98.0
+margin_top = 58.0
+margin_right = 629.0
+margin_bottom = 641.0
+custom_fonts/font = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

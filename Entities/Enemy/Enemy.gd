@@ -9,6 +9,8 @@ enum {
 	BLUE
 }
 
+var rightColor : bool
+
 var speed = 300
 var getMidX : float
 
@@ -40,6 +42,11 @@ func _set_color():
 
 func _on_HurtBox_area_entered(area):
 	if(area.name == "HitBox"):
+		rightColor = true
 		GAMESTATS.score += 10
 		area.get_parent().queue_free()
 		queue_free()
+	else:
+		if(!rightColor):
+			GAMESTATS.score -= 5
+			area.get_parent().queue_free()

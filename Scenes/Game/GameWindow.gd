@@ -1,6 +1,7 @@
 extends Control
 
 var enemy = preload("res://Entities/Enemy/Enemy.tscn")
+onready var scoreLabel = $CanvasLayer/ScoreLabel
 
 var spawnPoint
 var spawnColor
@@ -11,6 +12,9 @@ var enemySpeed :float = 10
 var color
 
 func _ready():
+	GAMESTATS.connect("score_label", self, "_set_label")
+	scoreLabel.text = str(GAMESTATS.score)
+	GAMESTATS.score = 0
 	randomize()
 	_spawn_enemy()
 
@@ -28,7 +32,10 @@ func _on_Timer_timeout():
 
 func _on_HurtBox_area_entered(area):
 	if(GAMESTATS.score > GAMESTATS.highScore):
+		GAMESTATS.score += 5
 		GAMESTATS.highScore = GAMESTATS.score
-	GAMESTATS.score = 0
 	
-	get_tree().reload_current_scene()
+	get_tree().change_scene("res://Scenes/Menu/Menu.tscn")
+
+func _set_label(score):
+	scoreLabel.text = str(score)
