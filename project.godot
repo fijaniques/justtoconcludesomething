@@ -14,6 +14,10 @@ config/name="JustToConcludeSomething"
 run/main_scene="res://Scenes/Game/GameWindow.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GAMESTATS="*res://Scenes/HUD/HUD.tscn"
+
 [display]
 
 window/size/width=2160

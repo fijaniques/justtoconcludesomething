@@ -33,5 +33,5 @@ func _ready():
 func _physics_process(delta):
 	position.y -= speed * delta
 
-func _on_CollisionBox_area_entered(area):
-	queue_free()
+#func _on_CollisionBox_area_entered(area):
+#	GAMESTATS.score -= 5

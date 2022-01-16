@@ -12,7 +12,6 @@ var color
 
 func _ready():
 	randomize()
-#	get_node("VBox/ChangeColor").connect("color_signal", self, "_get_color")
 	_spawn_enemy()
 
 func _spawn_enemy():
@@ -28,4 +27,8 @@ func _on_Timer_timeout():
 	_spawn_enemy()
 
 func _on_HurtBox_area_entered(area):
+	if(GAMESTATS.score > GAMESTATS.highScore):
+		GAMESTATS.highScore = GAMESTATS.score
+	GAMESTATS.score = 0
+	
 	get_tree().reload_current_scene()

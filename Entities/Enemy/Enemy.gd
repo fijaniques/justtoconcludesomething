@@ -14,6 +14,7 @@ var getMidX : float
 
 func _ready():
 	position.x += getMidX
+	position.y -= 300
 	_set_color()
 	match color:
 		RED:
@@ -39,4 +40,6 @@ func _set_color():
 
 func _on_HurtBox_area_entered(area):
 	if(area.name == "HitBox"):
+		GAMESTATS.score += 10
+		area.get_parent().queue_free()
 		queue_free()
