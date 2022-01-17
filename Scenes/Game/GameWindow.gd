@@ -2,6 +2,7 @@ extends Control
 
 var enemy = preload("res://Entities/Enemy/Enemy.tscn")
 onready var scoreLabel = $HUD/ScoreLabel
+onready var levelLabel = $HUD/LevelLabel
 
 var spawnPoint
 var spawnColor
@@ -13,7 +14,9 @@ var color
 
 func _ready():
 	GAMESTATS.connect("score_label", self, "_set_label")
+	GAMESTATS.connect("level_label", self, "_set_level_label")
 	scoreLabel.text = str(GAMESTATS.score)
+	levelLabel.text = "Level "+ str(GAMESTATS.level)
 	GAMESTATS.score = 0
 	randomize()
 	_spawn_enemy()
@@ -31,11 +34,17 @@ func _on_Timer_timeout():
 	_spawn_enemy()
 
 func _on_HurtBox_area_entered(area):
+	_reset()
+
+func _reset():
 	if(GAMESTATS.score > GAMESTATS.highScore):
 		GAMESTATS.score += 5
 		GAMESTATS.highScore = GAMESTATS.score
-	
+	GAMESTATS.level = 1
 	get_tree().change_scene("res://Scenes/Menu/Menu.tscn")
 
 func _set_label(score):
 	scoreLabel.text = str(score)
+
+func _set_level_label(level):
+	levelLabel.text = "Level " + str(level)

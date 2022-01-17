@@ -7,6 +7,7 @@ var level :int setget _set_level
 onready var levelTimer = $LevelUp
 
 signal score_label
+signal level_label
 
 func _ready():
 	self.level = 1
@@ -21,3 +22,4 @@ func _set_level(value):
 func _on_LevelUp_timeout():
 	self.level += 1
 	levelTimer.wait_time -= 0.3
+	emit_signal("level_label", level)
