@@ -36,12 +36,8 @@ func _on_Timer_timeout():
 	_spawn_enemy()
 	spawnTimer.wait_time -= 0.01
 
-func _on_HurtBox_area_entered(area):
-	_reset()
-
 func _reset():
 	if(GAMESTATS.score > GAMESTATS.highScore):
-		GAMESTATS.score += 5
 		GAMESTATS.highScore = GAMESTATS.score
 	GAMESTATS.level = 1
 	GAMESTATS.levelTimer.stop()
@@ -52,3 +48,6 @@ func _set_label(score):
 
 func _set_level_label(level):
 	levelLabel.text = "Level " + str(level)
+
+func _on_HurtBox_area_entered(area):
+	_reset()

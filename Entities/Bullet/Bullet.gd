@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var color
+var color :int
 var speed = 5000
 
 enum {

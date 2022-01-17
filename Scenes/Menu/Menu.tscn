@@ -36,7 +36,7 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 margin_right = 2160.0
-margin_bottom = 764.0
+margin_bottom = 636.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -46,27 +46,36 @@ align = 1
 valign = 1
 
 [node name="PLAY" type="Button" parent="VBoxContainer"]
-margin_top = 768.0
+margin_top = 640.0
 margin_right = 2160.0
-margin_bottom = 1533.0
+margin_bottom = 1277.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
 
-[node name="QUIT" type="Button" parent="VBoxContainer"]
-margin_top = 1537.0
+[node name="HOWTO" type="Button" parent="VBoxContainer"]
+margin_top = 1281.0
 margin_right = 2160.0
-margin_bottom = 2302.0
+margin_bottom = 1918.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "HOW TO PLAY"
+
+[node name="QUIT" type="Button" parent="VBoxContainer"]
+margin_top = 1922.0
+margin_right = 2160.0
+margin_bottom = 2558.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "QUIT"
 
 [node name="HighScoreLabel" type="Label" parent="VBoxContainer"]
-margin_top = 2306.0
+margin_top = 2562.0
 margin_right = 2160.0
-margin_bottom = 3071.0
+margin_bottom = 3199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -75,7 +84,7 @@ align = 1
 valign = 1
 
 [node name="HighScore" type="Label" parent="VBoxContainer"]
-margin_top = 3075.0
+margin_top = 3203.0
 margin_right = 2160.0
 margin_bottom = 3840.0
 size_flags_horizontal = 3
@@ -85,4 +94,5 @@ align = 1
 valign = 1
 
 [connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_PLAY_pressed"]
+[connection signal="pressed" from="VBoxContainer/HOWTO" to="." method="_on_HOWTO_pressed"]
 [connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_QUIT_pressed"]

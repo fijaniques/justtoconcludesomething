@@ -39,10 +39,11 @@ func _set_color():
 		color = BLUE
 
 func _on_HurtBox_area_entered(area):
-	if(area.get_parent().state == color):
-		GAMESTATS.score += 10
-		area.get_parent().queue_free()
-		queue_free()
-	elif(area.get_parent().state != color):
-		GAMESTATS.score -= 5
-		area.get_parent().queue_free()
+	if(area.name != "HurtBox"):
+		if(area.get_parent().state == color):
+			GAMESTATS.score += 10
+			area.get_parent().queue_free()
+			queue_free()
+		elif(area.get_parent().state != color):
+			GAMESTATS.score -= 5
+			area.get_parent().queue_free()
