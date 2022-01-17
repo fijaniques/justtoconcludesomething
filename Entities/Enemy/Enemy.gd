@@ -11,10 +11,11 @@ enum {
 
 var rightColor : bool
 
-var speed = 300
+var speed : int = 300
 var getMidX : float
 
 func _ready():
+	speed = clamp(speed * GAMESTATS.level / 1.70, 300, 999999999)
 	position.x += getMidX
 	position.y -= 300
 	_set_color()
