@@ -18,6 +18,8 @@ func _ready():
 	scoreLabel.text = str(GAMESTATS.score)
 	levelLabel.text = "Level "+ str(GAMESTATS.level)
 	GAMESTATS.score = 0
+	GAMESTATS.levelTimer.wait_time = 10
+	GAMESTATS.levelTimer.start()
 	randomize()
 	_spawn_enemy()
 
@@ -41,6 +43,7 @@ func _reset():
 		GAMESTATS.score += 5
 		GAMESTATS.highScore = GAMESTATS.score
 	GAMESTATS.level = 1
+	GAMESTATS.levelTimer.stop()
 	get_tree().change_scene("res://Scenes/Menu/Menu.tscn")
 
 func _set_label(score):

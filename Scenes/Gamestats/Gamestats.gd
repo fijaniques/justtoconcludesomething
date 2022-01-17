@@ -4,12 +4,14 @@ var highScore :int
 var score :int setget _set_score
 var level :int setget _set_level
 
+var inicialLvlTimer :float = 10
 onready var levelTimer = $LevelUp
 
 signal score_label
 signal level_label
 
 func _ready():
+	levelTimer.wait_time = inicialLvlTimer
 	self.level = 1
 
 func _set_score(value):
