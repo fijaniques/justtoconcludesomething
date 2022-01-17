@@ -31,9 +31,6 @@ window/stretch/aspect="keep_width"
 2d_physics/layer_1="Bullets"
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="UI"
-2d_physics/layer_4="RED"
-2d_physics/layer_5="GREEN"
-2d_physics/layer_6="BLUE"
 
 [physics]
 

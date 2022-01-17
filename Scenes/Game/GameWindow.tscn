@@ -112,7 +112,7 @@ margin_left = 1442.0
 [node name="ChangeColor" parent="VBox" instance=ExtResource( 1 )]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.5
 autostart = true
 
 [node name="HurtBox" type="Area2D" parent="."]

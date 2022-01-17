@@ -21,13 +21,10 @@ func _ready():
 	
 	match state:
 		RED:
-			$HitBox.set_collision_mask_bit(3, true)
 			modulate = Color(1, 0, 0)
 		GREEN:
-			$HitBox.set_collision_mask_bit(4, true)
 			modulate = Color(0, 1, 0)
 		BLUE:
-			$HitBox.set_collision_mask_bit(5, true)
 			modulate = Color(0, 0, 1)
 
 func _physics_process(delta):

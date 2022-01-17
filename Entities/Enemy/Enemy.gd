@@ -33,21 +33,16 @@ func _physics_process(delta):
 func _set_color():
 	if(spawnColor == 1):
 		color = RED
-		$HurtBox.set_collision_layer_bit(3, true)
 	elif(spawnColor == 2):
 		color = GREEN
-		$HurtBox.set_collision_layer_bit(4, true)
 	else:
 		color = BLUE
-		$HurtBox.set_collision_layer_bit(5, true)
 
 func _on_HurtBox_area_entered(area):
-	if(area.name == "HitBox"):
-		rightColor = true
+	if(area.get_parent().state == color):
 		GAMESTATS.score += 10
 		area.get_parent().queue_free()
 		queue_free()
-	elif(area.name == "Area2D"):
-		if(!rightColor):
-			GAMESTATS.score -= 5
-			area.get_parent().queue_free()
+	elif(area.get_parent().state != color):
+		GAMESTATS.score -= 5
+		area.get_parent().queue_free()

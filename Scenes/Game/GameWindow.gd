@@ -34,6 +34,7 @@ func _spawn_enemy():
 
 func _on_Timer_timeout():
 	_spawn_enemy()
+	spawnTimer.wait_time -= 0.01
 
 func _on_HurtBox_area_entered(area):
 	_reset()
