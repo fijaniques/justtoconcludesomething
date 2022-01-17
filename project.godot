@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GAMESTATS="*res://Scenes/HUD/HUD.tscn"
+GAMESTATS="*res://Scenes/Gamestats/GameStats.tscn"
 
 [display]
 

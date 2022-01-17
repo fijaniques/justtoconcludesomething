@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var color
-var speed = 2000
+var speed = 5000
 
 enum {
 	RED,

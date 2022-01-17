@@ -46,7 +46,7 @@ func _on_HurtBox_area_entered(area):
 		GAMESTATS.score += 10
 		area.get_parent().queue_free()
 		queue_free()
-	else:
+	elif(area.name == "Area2D"):
 		if(!rightColor):
 			GAMESTATS.score -= 5
 			area.get_parent().queue_free()

@@ -1,7 +1,7 @@
 extends Control
 
 var enemy = preload("res://Entities/Enemy/Enemy.tscn")
-onready var scoreLabel = $CanvasLayer/ScoreLabel
+onready var scoreLabel = $HUD/ScoreLabel
 
 var spawnPoint
 var spawnColor
